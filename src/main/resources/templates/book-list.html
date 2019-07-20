@@ -34,23 +34,25 @@
 
         <thead> <tr>
 
-            <th scope="col">title</th> <th scope="col">author</th> <th scope="col">year</th>
+            <th scope="col">Author</th> <th scope="col">Title</th> <th scope="col">Description</th> <th scope="col">Year</th>
 
         </tr>
 
         </thead>
 
-        <tbody>
+        <tbody th:each="book:${books}">
 
         <tr>
+            <td th:text="${book.author}"/>
 
-            <td/>
+            <td th:text="${book.title}"/>
 
-            <td/>
+            <td th:text="${book.description}"/>
 
-            <td/>
+            <td th:text="${book.year}"/>
 
         </tr>
+        </tbody>
 
     </table>
 
