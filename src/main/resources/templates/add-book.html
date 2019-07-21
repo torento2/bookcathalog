@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>BookCatalog</title>
+
+    <link rel='stylesheet' media='screen' href='/css/bootstrap.min.css'>
+
+    <script type='text/javascript' src='/js/bootstrap.min.js'></script>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-light bg-light">
+
+    <span class="navbar-brand mb-0 h1">BookCatalog</span>
+
+</nav>
+
+<br>
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col">
+
+            <h5>Add book</h5>
+            <form method="post" action="#" th:action="@{/save-book}" th:object="${book}">
+
+        <table class="table">
+            <tr>
+
+                <td th:text="Author"/>
+
+                <td >
+
+                    <input th:field="*{author}" />
+
+                </td>
+
+            </tr>
+
+            <tbody>
+
+            <tr>
+
+                <td th:text="Title"/>
+
+                <td >
+
+                    <input th:field="*{title}"/>
+
+                </td>
+
+            </tr>
+
+
+
+            <tr>
+
+                <td th:text="Description"/>
+
+                <td >
+
+                    <input th:field="*{description}"/>
+
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td th:text="Year"/>
+
+                <td >
+
+                    <input th:field="*{year}" />
+
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td th:text="Isbn"/>
+
+                <td >
+
+                    <input th:field="*{isbn}" />
+
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td >
+
+                    <input class="btn btn-outline-blue" type="submit" value="Add"/>
+
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td >
+
+                    <a class="btn btn-dark" th:href="@{'/book-list/'}">Back to book list</a>
+
+                </td>
+
+            </tr>
+
+        </table>
+
+    </form>
+
+</div>
+    </div>
+</div>
+</body>
+
+</html>
+

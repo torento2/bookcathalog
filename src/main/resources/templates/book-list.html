@@ -50,6 +50,7 @@
             <td th:text="${book.description}"/>
 
             <td th:text="${book.year}"/>
+            <td><a th:href="@{'book-detail/' + ${book.id}}">details</a></td>
 
         </tr>
         </tbody>
