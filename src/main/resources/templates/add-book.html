@@ -33,96 +33,107 @@
             <h5>Add book</h5>
             <form method="post" action="#" th:action="@{/save-book}" th:object="${book}">
 
-        <table class="table">
-            <tr>
+                <table class="table">
+                    <tr>
 
-                <td th:text="Author"/>
-
-                <td >
-
-                    <input th:field="*{author}" />
-
-                </td>
-
-            </tr>
-
-            <tbody>
-
-            <tr>
-
-                <td th:text="Title"/>
-
-                <td >
-
-                    <input th:field="*{title}"/>
-
-                </td>
-
-            </tr>
+                        <td th:text="Author"/>
 
 
+                        <td>
 
-            <tr>
+                            <input th:field="*{author}"/>
+                            <div class="alert alert-danger"
+                                 th:if="${#fields.hasErrors('author')}" th:errors="*{author"></div>
 
-                <td th:text="Description"/>
+                        </td>
 
-                <td >
+                    </tr>
 
-                    <input th:field="*{description}"/>
+                    <tbody>
 
-                </td>
+                    <tr>
 
-            </tr>
+                        <td th:text="Title"/>
 
-            <tr>
 
-                <td th:text="Year"/>
+                        <td>
 
-                <td >
+                            <input th:field="*{title}"/>
+                            <div class="alert alert-danger"
+                                 th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></div>
 
-                    <input th:field="*{year}" />
+                        </td>
 
-                </td>
+                    </tr>
 
-            </tr>
 
-            <tr>
+                    <tr>
 
-                <td th:text="Isbn"/>
+                        <td th:text="Description"/>
 
-                <td >
+                        <td>
 
-                    <input th:field="*{isbn}" />
+                            <input th:field="*{description}"/>
+                            <div class="alert alert-danger"
+                                 th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></div>
 
-                </td>
+                        </td>
 
-            </tr>
+                    </tr>
 
-            <tr>
+                    <tr>
 
-                <td >
+                        <td th:text="Year"/>
 
-                    <input class="btn btn-outline-blue" type="submit" value="Add"/>
+                        <td>
 
-                </td>
+                            <input th:field="*{year}"/>
+                            <div class="alert alert-danger"
+                                 th:if="${#fields.hasErrors('year')}" th:errors="*{year}"></div>
 
-            </tr>
+                        </td>
 
-            <tr>
+                    </tr>
 
-                <td >
+                    <tr>
 
-                    <a class="btn btn-dark" th:href="@{'/book-list/'}">Back to book list</a>
+                        <td th:text="Isbn"/>
 
-                </td>
+                        <td>
 
-            </tr>
+                            <input th:field="*{isbn}"/>
+                            <div class="alert alert-danger"
+                                 th:if="${#fields.hasErrors('isbn')}" th:errors="*{isbn}"></div>
 
-        </table>
+                        </td>
 
-    </form>
+                    </tr>
 
-</div>
+                    <tr>
+
+                        <td>
+
+                            <input class="btn-outline-primary btn-group" type="submit" value="Add"/>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>
+
+                            <a class="btn-outline-success btn-block" th:href="@{'/book-list/'}">Back to book list</a>
+
+                        </td>
+
+                    </tr>
+
+                </table>
+
+            </form>
+
+        </div>
     </div>
 </div>
 </body>
