@@ -31,4 +31,9 @@ public class BDBookService implements BookService {
         bookRepository.save(book);
 
     }
+
+    @Override
+    public void addBook(Book book) {
+
+    }
 }

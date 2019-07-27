@@ -81,6 +81,11 @@ public class InMemoryBookService implements BookService {
         bookList.put(id, book);
     }
 
+    @Override
+    public void addBook(Book book) {
+
+    }
+
     private Long generateId() {
         return Collections.max(bookList.keySet()) + 1;
     }

@@ -10,4 +10,6 @@ public interface BookService {
     Book getBook(Long id);
 
     void saveBook(Book book);
+
+    void addBook(Book book);
 }
